@@ -1,0 +1,15 @@
+<div class="widget" role="tabpanel">
+
+  <div>
+    <div>
+      <div *ngFor="let widget of widgets" class="widgets" [id]="widget.container">
+        <ng-container *ngIf="title=='name';else check">
+          <a href="{{widget.url}}">{{widget.name + ' - '+ widget.category}}</a>
+        </ng-container>
+        <ng-template #check>
+          <a href="{{widget.url}}">{{widget.name + ' - '+widget.category}}</a>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
